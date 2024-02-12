@@ -5,49 +5,82 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A-ONE SMOKE SHOP</title>
-<meta name="title" content="A-ONE SMOKE SHOP">
-<meta name="description" content="A-ONE SMOKE SHOP">
+<title>A-One Smoke Shop</title>
+<meta name="title" content="A-One Smoke Shop">
+<meta name="description" content="A-One Smoke Shop">
 
   <!-- 
     - custom css link
   -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#000000">
+<link rel="shortcut icon" href="./favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-config" content="./favicon/browserconfig.xml">
+<meta name="theme-color" content="#000000">
+
 </head>
 
 <body>
-    <main class="flexbox-col">
-      <img src="aonelogo.png" height="35%" width="35%">
+  <script> 
+    function fun() { 
+       var e = document.getElementById("mainpage");
+       var f = document.getElementById("couponpage");
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+          f.style.display = 'block';
+          let randomCode = (Math.random() + 1).toString(36).substring(6);
+          document.getElementById("couponcode").innerHTML= randomCode;
+    } 
+
+ </script>
+ 
+    <main class="flexbox-col" id="mainpage" style="display: block;">
+      <img src="aonelogo.png">
         <div class="form-wrapper">
-          <form id="form" method="post" name="emailform" action="">
-         
+          <form id="form" method="post" name="emailform" target="iframe" action="https://script.google.com/macros/s/AKfycbwv8gaS1NcmNbY8Opze29HHoxErpUzcnWi1hTCcKfpGlT5mxroafWT6k1ITCN7_NomgzA/exec">
             <div class="form-input-max">
             <div class="form-input-wrapper flexbox-left">
-              <i class="uil uil-at"></i>
-              <input class="form-input" type="name" id="name" name="name" placeholder="Name" aria-label="" required>
+              <input class="form-input" type="name" id="name" name="Name" placeholder="Name" aria-label="" required>
             </div>
           </div>
 
           <div class="form-input-max">
             <div class="form-input-wrapper flexbox-left">
-              <i class="uil uil-at"></i>
-              <input class="form-input" type="tel" id="phone" name="phone" placeholder="Phone Number" aria-label="" required>
+              <input class="form-input" type="tel" id="phone" name="Phone" placeholder="Phone Number" aria-label="" required>
             </div>
           </div>
 
            <div class="form-input-max center">
             <div class="button-wrapper">
-              <button id="form-button" type="submit" class="button btn-primary"><i class="uil uil-envelope-heart"></i>Give me my discount<div class="btn-secondary"></div></button>
+              <button onclick = "fun()" id="form-button" type="submit" class="button">Give me my discount</button>
              </div>
            </div>
-
-
          </form>
         </div>
-      
+        <iframe name="iframe" style="position: absolute;width:0;height:0;border:0;"></iframe>
       </main>
-    
+
+
+
+      <main class="flexbox-col" id="couponpage" style="display: none;">
+       <h3>Coupon Code:</h3>
+        <coupon>
+          <span id="couponcode"></span>
+        </coupon>
+        
+        <br><br>
+        <div class="button-wrapper">
+          <button onclick= "location.href = 'index.html';" class="backbutton">&#8592; Go Back</button>
+         </div>
+      </main>
+  
 </body>
 
 </html>
