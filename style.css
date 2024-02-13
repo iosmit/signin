@@ -203,6 +203,16 @@ h3{
     text-align: center;
 }
 
+img {
+    transition-duration: 2s;
+    transition-property: transform;
+}
+
+img:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
 .backbutton, .btn-secondary {
     margin: 0;
     width: 100%;
@@ -434,6 +444,7 @@ coupon {
     border: min(1vw, 1vh) solid transparent;
     animation: 2s linear infinite idle;
   }
+  
   @keyframes idle {
     0% {
       filter: hue-rotate(0deg);
