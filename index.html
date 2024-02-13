@@ -54,13 +54,15 @@
           <form id="form" method="post" name="emailform" target="iframe" action="https://script.google.com/macros/s/AKfycbzFfo787-GZlrMVJFly7jaViUV9FDxCHYZdP6hvSbyH8FL9uPoq8hu3qhfPHQo6Snyp/exec">
             <div class="form-input-max">
             <div class="form-input-wrapper flexbox-left">
-              <input class="form-input" type="name" id="name" name="Name" placeholder="Name" aria-label="" required>
+              <input class="form-input" type="name" id="name" name="Name" oninvalid="this.setCustomValidity('Please enter a name')" onchange="try{setCustomValidity('')}catch(e){}"
+              oninput="setCustomValidity(' ')" placeholder="Name" aria-label="" required>
             </div>
           </div>
 
           <div class="form-input-max">
             <div class="form-input-wrapper flexbox-left">
-              <input class="form-input" type="tel" id="phone" name="Phone" pattern="[1-9]{1}[0-9]{9}" title="Enter a valid phone number" placeholder="Phone Number" aria-label="" required>
+              <input class="form-input" type="tel" id="phone" name="Phone" pattern="[1-9]{1}[0-9]{9}" onchange="try{setCustomValidity('')}catch(e){}"
+              oninput="setCustomValidity(' ')" oninvalid="this.setCustomValidity('Please enter a valid phone number')" placeholder="Phone Number" aria-label="" required>
             </div>
           </div> 
 
