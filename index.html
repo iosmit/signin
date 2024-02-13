@@ -32,7 +32,9 @@
     function discount() { 
       var nameInput = document.getElementById("name");
       var phoneInput = document.getElementById("phone");
+      const phoneNumberRegex = /^[1-9]{1}[0-9]{9}$/;
       if (nameInput && nameInput.value && phoneInput && phoneInput.value){
+        if (phoneNumberRegex.test(phoneInput.value)) {
        var e = document.getElementById("mainpage");
        var f = document.getElementById("couponpage");
        if(e.style.display == 'block')
@@ -41,6 +43,7 @@
           let randomCode = (Math.random() + 1).toString(36).substring(6);
           document.getElementById("couponcode").innerHTML= randomCode;
     }
+  }
   } 
 
  </script>
@@ -57,7 +60,7 @@
 
           <div class="form-input-max">
             <div class="form-input-wrapper flexbox-left">
-              <input class="form-input" type="tel" id="phone" name="Phone" placeholder="Phone Number" aria-label="" required>
+              <input class="form-input" type="tel" id="phone" name="Phone" pattern="[1-9]{1}[0-9]{9}" title="Enter a valid phone number" placeholder="Phone Number" aria-label="" required>
             </div>
           </div> 
 
