@@ -321,12 +321,11 @@ img:hover {
 }
 @media only screen and (max-width: 1456px) {
     img{
-        width: 45%;
-        height: 45%;
+        width: 47%;
+        height: 47%;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
     }
     :root {
         /* Sizes */
